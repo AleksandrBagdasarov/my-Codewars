@@ -1,7 +1,9 @@
-def square_digits(num):
-    return int(''.join(list(map(str, [int(x)**2 for x in str(num)]))))
+def descending_order(num):
+    return int(''.join(sorted(str(num), reverse=True)))
 
 
 
 
-square_digits(9119) # 811181
+descending_order(2110)# 0)
+descending_order(15)# 51)
+descending_order(123456789)# 987654321)
