@@ -1,35 +1,14 @@
 def increment_string(strng):
     x = ''
-    #index = -1
     if len(strng) == 0 or strng[-1].isalpha():
-        print(strng+'1')
         return(strng+'1')
     else:
-        print(qqq(strng, x))
-        #while strng[index].isdigit():
-        #    q = strng[-1]
-        #    q = int(q)
-        #    q += 1
-        #    if len(str(q)) > 1:
-        #        x += '0'
-        #        index += -1
-        #    else:
-        #        s = strng[0:-1]
-        #        s = s+str(q)
-        #        s += str(x)
-        #        print(s)
-        #        return s
-        #if strng[-1].isalpha():
-        #    s +='1'
-        #    s += str(x)
-        #    print(s)
-        #    return s
+        return(qqq(strng, x))
 
 def qqq(s,x):
     if len(s) == 0 or s[-1].isalpha():
         s +='1'
         s += str(x)
-        #print(type(s),s)
         return f'{s}'
     else:
         q = s[-1]
@@ -42,7 +21,6 @@ def qqq(s,x):
             s = s[0:-1]
             s = s+str(q)
             s += str(x)
-            #print(type(s),s)
             return f'{s}'
 
 increment_string("foo")# "foo1")
