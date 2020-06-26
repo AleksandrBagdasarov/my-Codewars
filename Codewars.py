@@ -1,15 +1,13 @@
-def accum(s):
-    q = 1
-    a = []
-    for x in s:
-        x *= q
-        a.append(x.title())
-        q += 1
-    print('-'.join(a))
+def get_middle(s):
+    if ( not len(s) % 2 ):
+        return(s[len(s) // 2 -1] + s[(len(s) // 2)])
+    else:
+        return(s[len(s[:-1]) // 2])
 
 
-accum("ZpglnRxqenU")# "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu")
-accum("NyffsGeyylB")# "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb")
-accum("MjtkuBovqrU")# "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu")
-accum("EvidjUnokmM")# "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm")
-accum("HbideVbxncC")# "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc")
+
+get_middle("test")#"es")
+get_middle("testing")#"t")
+get_middle("middle")#"dd")
+get_middle("A")#"A")
+get_middle("of")#"of")
