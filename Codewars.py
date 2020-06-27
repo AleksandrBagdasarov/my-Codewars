@@ -1,9 +1,11 @@
-def descending_order(num):
-    return int(''.join(sorted(str(num), reverse=True)))
+def xo(s):
+    print(s.count('x'))
 
 
 
 
-descending_order(2110)# 0)
-descending_order(15)# 51)
-descending_order(123456789)# 987654321)
+
+xo('')# 'True expected')
+xo('xo')# 'True expected')
+xo('xo0')# 'True expected')
+xo('xxxoo')# 'False expected')
