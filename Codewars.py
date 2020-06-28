@@ -1,10 +1,25 @@
-def to_jaden_case(string):
-    a = []
-    for x in string.split():
-        a.append(x.capitalize())
-    return(' '.join(a))
+def root(n):
+    new_n = 0
+    for x in str(n):
+        new_n += int(x)
+    if len(str(new_n)) > 1:
+        return digital_root(new_n)
+    else:
+        return new_n
+
+def digital_root(n):
+    if len(str(n)) > 1:
+        return root(n)
+    else:
+        return n
+
+    
+        
 
 
 
-quote = "How can mirrors be real if our eyes aren't real"
-to_jaden_case(quote) # "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+digital_root(16)# 7)
+digital_root(942)# 6)
+digital_root(132189)# 6)
+digital_root(493193)# 2)
