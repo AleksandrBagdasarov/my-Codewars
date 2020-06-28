@@ -1,25 +1,22 @@
-def root(n):
-    new_n = 0
-    for x in str(n):
-        new_n += int(x)
-    if len(str(new_n)) > 1:
-        return digital_root(new_n)
+def find(i, seq):
+    s = seq.count(seq[i])
+    if s % 2 == 0:
+        i += 1
+        return find(i, seq)
     else:
-        return new_n
-
-def digital_root(n):
-    if len(str(n)) > 1:
-        return root(n)
-    else:
-        return n
-
-    
-        
+        return seq[i]
 
 
 
+def find_it(seq):
+    i = 0
+    return find(i, seq)
 
-digital_root(16)# 7)
-digital_root(942)# 6)
-digital_root(132189)# 6)
-digital_root(493193)# 2)
+
+
+find_it([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5])# 5)
+find_it([1,1,2,-2,5,2,4,4,-1,-2,5])# -1); 
+find_it([20,1,1,2,2,3,3,5,5,4,20,4,5])# 5);
+find_it([10])# 10);
+find_it([1,1,1,1,1,1,10,1,1,1,1])# 10);
+find_it([5,4,3,2,1,5,4,3,2,10,10])# 1);
