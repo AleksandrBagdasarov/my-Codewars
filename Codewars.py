@@ -1,23 +1,18 @@
-def persistence(n):
-    counter = 0
-    return qqq(n,counter)
-
-def qqq(n,counter):
-    str_n = str(n)
-    str_new_n = str_n[0]
-    int_new_n = int(str_new_n)
-    if n > 9:
-        counter += 1
-        for x in str_n[1:]:
-            int_new_n *= int(x)
-        return qqq(int_new_n, counter)
+def likes(names):
+    if len(names) == 0:
+        return('no one likes this')
+    elif len(names) == 1:
+        return(f'{names[0]} likes this')
+    elif len(names) == 2:
+        return(f'{names[0]} and {names[1]} like this')
+    elif len(names) == 3:
+        return(f'{names[0]}, {names[1]} and {names[2]} like this')
     else:
-        return counter
-            
-        
+        return(f'{names[0]}, {names[1]} and {len(names[2:])} others like this')
 
 
-persistence(39)# 3)
-persistence(4)# 0)
-persistence(25)# 2)
-persistence(999)# 4)
+likes([])#, 'no one likes this')
+likes(['Peter'])#, 'Peter likes this')
+likes(['Jacob', 'Alex'])#, 'Jacob and Alex like this')
+likes(['Max', 'John', 'Mark'])#, 'Max, John and Mark like this')
+likes(['Alex', 'Jacob', 'Mark', 'Max'])#, 'Alex, Jacob and 2 others like this')
