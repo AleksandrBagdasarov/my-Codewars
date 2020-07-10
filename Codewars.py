@@ -1,25 +1,27 @@
-# energy = '150 132 110 186 103 229 179 224 230 113 224 202'
-# norm = 148
-# norm_cost = 3.67
-# over_norm_cost = 4.83
+def compute_differentiated(s, n, k):
+    # вычисление ежемесячного платежа
+    ka = (k/(12*100))
+    bank_differentiated = []
+    bank_annuity = []
+    for t in range(1, n + 1):
+        #  ((((1 + ka) ** n) - 1) / (ka * ((1+ka) ** n)))
+        pa = ((ka * ((1+ka) ** n)) / (((1 + ka) ** n) - 1)) * s
+        x = (s / n) + (s - (t - 1) * (s / n)) * (k / (12 * 100))
+        bank_differentiated.append(x)
+        bank_annuity.append(pa)
+        print("%2d месяц - (диф.) %8.2f руб - (анн.) %8.2f руб" % (t, x, pa))
+    print("Доход банка - (диф.) %6.2f руб - (анн.) %6.2f руб" % (sum(bank_differentiated) - s, sum(bank_annuity) - s,))
 
-energy = str(input())
-norm = int(input)
-norm_cost = float(input())
-over_norm_cost = float(input())
 
-count_energy = []
-count_cost = 0
+# def compute_annuity(s, n, k):
+#     ka = (k/(12*100))
+#     pa = ((((1 + ka) ** n) - 1) / ka * ((1+ka) ** n)) * s
+    
+# s=int(input())
+# n=int(input())
+# k=int(input())
+s = 1000000
+n = 12
+k = 15
 
-energy = energy.split()
-for x in energy:
-    x = int(x)
-    count_energy.append(x)
-    if x < norm:
-        count_cost += x * norm_cost
-    else:
-        over = x - norm
-        count_cost += over * over_norm_cost
-        count_cost += norm * norm_cost
-
-print("Сумма: %6d кВт ч, стоимость %7.2f руб" % (sum(count_energy), count_cost))
+compute_differentiated(s, n, k)
